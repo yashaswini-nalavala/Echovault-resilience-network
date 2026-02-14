@@ -1,47 +1,16 @@
 {% extends "base.html" %}
+
 {% block content %}
+<div class="card">
+    <h2>Welcome, {{ user[0] }}</h2>
+    <p><strong>Points:</strong> {{ user[1] }}</p>
+    <p><strong>Your Referral Code:</strong> {{ user[2] }}</p>
+    <p><strong>Total Echoes Submitted:</strong> {{ total_echoes }}</p>
 
-<h1 class="dashboard-title">Your Resilience Dashboard</h1>
-
-<div class="stats-grid">
-    <div class="stat-card">
-        <h3>Echoes Shared</h3>
-        <p>{{ total_echoes }}</p>
-    </div>
-
-    <div class="stat-card">
-        <h3>Echoes Received</h3>
-        <p>{{ total_received }}</p>
+    <div class="dashboard-actions">
+        <a href="/submit" class="btn">Submit Echo</a>
+        <a href="/receive" class="btn">Receive Echo</a>
+        <a href="/leaderboard" class="btn">View Leaderboard</a>
     </div>
 </div>
-
-<div class="card">
-    <h2>Leave a New Echo</h2>
-    <form action="/submit" method="POST">
-        <select name="emotion" required>
-            <option value="">Select Emotion</option>
-            <option>Anxiety</option>
-            <option>Failure</option>
-            <option>Loneliness</option>
-            <option>Burnout</option>
-            <option>Heartbreak</option>
-        </select>
-
-        <textarea name="message" placeholder="Write something you wish someone had told you..." required></textarea>
-
-        <button type="submit" class="btn-primary">Store Echo</button>
-    </form>
-</div>
-
-<div class="card">
-    <h2>Global Emotion Trends</h2>
-
-    {% for stat in stats %}
-        <div class="emotion-stat">
-            <span>{{ stat[0] }}</span>
-            <span>{{ stat[1] }} echoes</span>
-        </div>
-    {% endfor %}
-</div>
-
 {% endblock %}
