@@ -1,22 +1,11 @@
 {% extends "base.html" %}
-
 {% block content %}
-<div class="card">
-    <h2>Submit an Echo</h2>
 
-    <form method="POST">
-        <textarea name="content" placeholder="Write your message..." required></textarea>
+<h2>Send Echo</h2>
 
-        <select name="emotion" required>
-            <option value="">Select Emotion</option>
-            <option value="Happy">Happy</option>
-            <option value="Sad">Sad</option>
-            <option value="Anxious">Anxious</option>
-            <option value="Hopeful">Hopeful</option>
-            <option value="Grateful">Grateful</option>
-        </select>
+<form method="POST">
+<textarea name="content" placeholder="Write your echo..." required></textarea><br>
+<button type="submit">Send Echo (+5 points)</button>
+</form>
 
-        <button type="submit" class="btn">Send Echo</button>
-    </form>
-</div>
 {% endblock %}
