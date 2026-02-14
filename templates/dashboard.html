@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="dashboard-title">Your Resilience Dashboard</h1>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <h3>Echoes Shared</h3>
+        <p>{{ total_echoes }}</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Echoes Received</h3>
+        <p>{{ total_received }}</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Leave a New Echo</h2>
+    <form action="/submit" method="POST">
+        <select name="emotion" required>
+            <option value="">Select Emotion</option>
+            <option>Anxiety</option>
+            <option>Failure</option>
+            <option>Loneliness</option>
+            <option>Burnout</option>
+            <option>Heartbreak</option>
+        </select>
+
+        <textarea name="message" placeholder="Write something you wish someone had told you..." required></textarea>
+
+        <button type="submit" class="btn-primary">Store Echo</button>
+    </form>
+</div>
+
+<div class="card">
+    <h2>Global Emotion Trends</h2>
+
+    {% for stat in stats %}
+        <div class="emotion-stat">
+            <span>{{ stat[0] }}</span>
+            <span>{{ stat[1] }} echoes</span>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

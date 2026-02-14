@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EchoVault</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">🌌 EchoVault</div>
+
+    <div class="nav-links">
+        {% if session.username %}
+            <span class="user">👤 {{ session.username }}</span>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/receive">Receive</a>
+            <a href="/logout">Logout</a>
+        {% else %}
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        {% endif %}
+    </div>
+</nav>
+
+<div class="main-container">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

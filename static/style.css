@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.main-container {
+    padding: 40px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.08);
+    padding: 25px;
+    margin: 20px auto;
+    width: 500px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+}
+
+.auth-card {
+    width: 350px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #ff6b6b;
+    color: white;
+}
+
+.btn-secondary {
+    background: #4ecdc4;
+    color: white;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    width: 200px;
+}
+
+.echo-display {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="hero">
+    <h1>When Your Hardest Moment Becomes Someone Else’s Hope</h1>
+    <p>EchoVault connects humans across time through shared resilience.</p>
+
+    {% if not session.username %}
+        <div class="hero-buttons">
+            <a href="/register" class="btn-primary">Get Started</a>
+            <a href="/login" class="btn-secondary">Login</a>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

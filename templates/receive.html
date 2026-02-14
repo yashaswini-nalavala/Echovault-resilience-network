@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="dashboard-title">Receive an Echo</h1>
+
+<div class="card">
+    <form method="POST">
+        <select name="emotion" required>
+            <option value="">Select Emotion</option>
+            <option>Anxiety</option>
+            <option>Failure</option>
+            <option>Loneliness</option>
+            <option>Burnout</option>
+            <option>Heartbreak</option>
+        </select>
+
+        <button type="submit" class="btn-primary">Reveal Echo</button>
+    </form>
+</div>
+
+{% if echo %}
+<div class="echo-display">
+    <h3>Someone once survived this...</h3>
+    <p>"{{ echo }}"</p>
+</div>
+{% endif %}
+
+{% endblock %}
