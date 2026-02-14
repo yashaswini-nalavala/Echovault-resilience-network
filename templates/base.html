@@ -7,13 +7,14 @@
 <body>
 
 <nav class="navbar">
-    <div class="logo">🌌 EchoVault</div>
-
-    <div class="nav-links">
-        {% if session.username %}
-            <span class="user">👤 {{ session.username }}</span>
+    <div class="logo">EchoVault</div>
+    <div>
+        <a href="/">Home</a>
+        {% if session.get('user_id') %}
             <a href="/dashboard">Dashboard</a>
-            <a href="/receive">Receive</a>
+            <a href="/submit">Submit Echo</a>
+            <a href="/receive">Receive Echo</a>
+            <a href="/leaderboard">Leaderboard</a>
             <a href="/logout">Logout</a>
         {% else %}
             <a href="/login">Login</a>
@@ -22,7 +23,7 @@
     </div>
 </nav>
 
-<div class="main-container">
+<div class="container">
     {% block content %}{% endblock %}
 </div>
 
