@@ -117,58 +117,7 @@ Monolithic Web Application using MVC pattern.
 
 • Local file system (for profile images)
 
-🗃 6️⃣ DATABASE DESIGN
-users table
-
-id (Primary Key)
-
-username
-
-password
-
-bio
-
-profile_pic
-
-referral_code
-
-points
-
-follows table
-
-id
-
-follower_id
-
-following_id
-
-status (pending/accepted)
-
-messages table
-
-id
-
-sender_id
-
-receiver_id
-
-message
-
-time
-
-echoes table
-
-id
-
-sender_id
-
-receiver_id
-
-content
-
-likes
-
-🔄 7️⃣ WORKFLOW
+🔄 6 WORKFLOW
 
 User registers (gets referral code)
 
@@ -188,7 +137,7 @@ Gain referral points (+10)
 
 View leaderboard
 
-🎯 8️⃣ INNOVATION
+🎯 7 INNOVATION
 
 ✔ Focus on micro-interactions
 ✔ Gamified appreciation model
@@ -196,7 +145,7 @@ View leaderboard
 ✔ Encourages positive engagement
 ✔ No ads, no algorithm overload
 
-📈 9️⃣ FUTURE ENHANCEMENTS
+📈 8 FUTURE ENHANCEMENTS
 
 • Real-time chat with WebSockets
 • Mobile app version
@@ -207,7 +156,7 @@ View leaderboard
 • Analytics dashboard
 • Push notifications
 
-🧠 🔟 LEARNING OUTCOMES
+🧠 9 LEARNING OUTCOMES
 
 Through this project we learned:
 
