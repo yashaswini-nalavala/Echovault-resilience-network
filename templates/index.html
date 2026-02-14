@@ -1,16 +1,51 @@
 {% extends "base.html" %}
+
 {% block content %}
 
-<div class="hero">
-    <h1>When Your Hardest Moment Becomes Someone Else’s Hope</h1>
-    <p>EchoVault connects humans across time through shared resilience.</p>
+<div class="hero-section">
+    <h1>Welcome to EchoVault</h1>
+    <p>
+        A human-powered emotional connection platform where voices are heard,
+        kindness is rewarded, and meaningful connections are built.
+    </p>
 
-    {% if not session.username %}
+    {% if not session.get('user_id') %}
         <div class="hero-buttons">
-            <a href="/register" class="btn-primary">Get Started</a>
-            <a href="/login" class="btn-secondary">Login</a>
+            <a href="/register" class="btn">Create Account</a>
+            <a href="/login" class="btn btn-outline">Login</a>
+        </div>
+    {% else %}
+        <div class="hero-buttons">
+            <a href="/dashboard" class="btn">Go to Dashboard</a>
         </div>
     {% endif %}
 </div>
 
+
+<div class="features-section">
+
+    <div class="feature-card">
+        <h3>💬 Share Emotional Echoes</h3>
+        <p>Express your feelings and experiences in a safe, supportive environment.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>🤝 Connect with People</h3>
+        <p>Follow profiles, send greetings, and build meaningful connections.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>🏆 Earn Points</h3>
+        <p>Invite others, contribute positivity, and climb the leaderboard.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>🌍 Human First</h3>
+        <p>No AI replies. Real humans. Real empathy. Real support.</p>
+    </div>
+
+</div>
+
 {% endblock %}
+
+
