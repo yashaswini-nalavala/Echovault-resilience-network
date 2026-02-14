@@ -1,34 +1,18 @@
 {% extends "base.html" %}
-
 {% block content %}
+
+<h2>Received Echoes</h2>
+
+{% for echo in echoes %}
 <div class="card">
-    <h2>Receive an Echo</h2>
-
-    <form method="POST">
-        <select name="emotion" required>
-            <option value="">Select Emotion</option>
-            <option value="Happy">Happy</option>
-            <option value="Sad">Sad</option>
-            <option value="Anxious">Anxious</option>
-            <option value="Hopeful">Hopeful</option>
-            <option value="Grateful">Grateful</option>
-        </select>
-
-        <button type="submit" class="btn">Get Echo</button>
-    </form>
-
-    {% if echo %}
-        <div class="echo-box">
-            <h3>Message Received:</h3>
-            <p>{{ echo }}</p>
-
-            <a href="/profile/{{ echo_user_id }}" class="btn">View Profile</a>
-
-            <form method="POST" action="/message/{{ echo_user_id }}">
-                <input type="text" name="message" placeholder="Send a greeting..." required>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
-    {% endif %}
+<p>{{ echo.content }}</p>
+<p>❤️ Likes: {{ echo.likes }}</p>
+<a href="/like_echo/{{ echo.id }}">Like</a>
 </div>
+{% endfor %}
+
+{% if not echoes %}
+<p>No echoes received yet.</p>
+{% endif %}
+
 {% endblock %}
