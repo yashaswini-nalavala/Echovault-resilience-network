@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>EchoVault</title>
+    <title>Echo App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="logo">EchoVault</div>
-    <div>
-        <a href="/">Home</a>
-        {% if session.get('user_id') %}
-            <a href="/dashboard">Dashboard</a>
-            <a href="/submit">Submit Echo</a>
-            <a href="/receive">Receive Echo</a>
-            <a href="/leaderboard">Leaderboard</a>
-            <a href="/logout">Logout</a>
-        {% else %}
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
-        {% endif %}
-    </div>
-</nav>
+<div class="navbar">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/receive">Received</a>
+    <a href="/leaderboard">Leaderboard</a>
+    <a href="/notifications">Notifications</a>
+    <a href="/profile/{{ session['user_id'] }}">My Profile</a>
+    <a href="/logout">Logout</a>
+</div>
 
 <div class="container">
     {% block content %}{% endblock %}
@@ -29,3 +21,5 @@
 
 </body>
 </html>
+
+
