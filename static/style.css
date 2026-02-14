@@ -1,237 +1,224 @@
-/* ================= GLOBAL RESET ================= */
+/* ===== GLOBAL ===== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
+body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea, #764ba2);
-    color: #ffffff;
-    min-height: 100vh;
+    min-height:100vh;
+    padding:20px;
+    color:#333;
 }
 
-/* ================= NAVBAR ================= */
+/* ===== NAVBAR ===== */
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 40px;
-    background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10px);
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: 0.3s ease;
-    font-weight: 500;
-}
-
-.navbar a:hover {
-    opacity: 0.7;
-}
-
-/* ================= CONTAINER ================= */
-
-.container {
-    padding: 60px 10%;
-}
-
-/* ================= HERO SECTION ================= */
-
-.hero-section {
-    text-align: center;
-    margin-bottom: 70px;
-}
-
-.hero-section h1 {
-    font-size: 44px;
-    margin-bottom: 20px;
-}
-
-.hero-section p {
-    max-width: 650px;
-    margin: auto;
-    line-height: 1.6;
-    opacity: 0.9;
-    margin-bottom: 30px;
-}
-
-.hero-buttons {
-    margin-top: 20px;
-}
-
-/* ================= FEATURE GRID ================= */
-
-.features-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-.feature-card {
-    background: rgba(255,255,255,0.12);
-    padding: 25px;
-    border-radius: 16px;
-    backdrop-filter: blur(12px);
-    transition: 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-}
-
-/* ================= CARD SYSTEM ================= */
-
-.card {
-    background: rgba(255,255,255,0.12);
-    padding: 35px;
-    border-radius: 16px;
-    backdrop-filter: blur(12px);
-    margin-bottom: 30px;
-    animation: fadeIn 0.6s ease;
-}
-
-.center {
-    text-align: center;
-}
-
-/* ================= FORM ELEMENTS ================= */
-
-input, textarea, select {
-    width: 100%;
-    padding: 12px 14px;
-    margin: 12px 0;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    font-size: 15px;
-}
-
-textarea {
-    min-height: 120px;
-    resize: none;
-}
-
-input:focus, textarea:focus, select:focus {
-    box-shadow: 0 0 0 2px #ffffff55;
-}
-
-/* ================= BUTTON SYSTEM ================= */
-
-.btn {
-    display: inline-block;
-    padding: 12px 18px;
-    background: #ffffff;
-    color: #333;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 12px;
-    transition: 0.3s ease;
-    cursor: pointer;
-    border: none;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-}
-
-/* ================= DASHBOARD ================= */
-
-.dashboard-actions {
-    margin-top: 25px;
-}
-
-.dashboard-actions .btn {
-    margin-right: 15px;
-}
-
-/* ================= ECHO DISPLAY ================= */
-
-.echo-box {
-    margin-top: 25px;
-    padding: 25px;
-    background: rgba(0,0,0,0.25);
-    border-radius: 14px;
-}
-
-/* ================= PROFILE ================= */
-
-.profile-stats {
-    margin-top: 15px;
-    line-height: 1.8;
-}
-
-/* ================= TABLE (Leaderboard) ================= */
-
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 14px;
-    text-align: left;
-}
-
-th {
+.navbar{
     background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding:15px 25px;
+    border-radius:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
-tr:nth-child(even) {
-    background: rgba(255,255,255,0.08);
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+    font-weight:500;
+    transition:0.3s;
 }
 
-/* ================= MESSAGE FORM ================= */
-
-form input[type="text"] {
-    margin-top: 10px;
+.navbar a:hover{
+    color:#ffd369;
 }
 
-/* ================= ANIMATIONS ================= */
+/* ===== CONTAINER ===== */
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.container{
+    max-width:1000px;
+    margin:auto;
 }
 
-/* ================= RESPONSIVE DESIGN ================= */
+/* ===== AUTH BOX ===== */
 
-@media (max-width: 768px) {
+.auth-box{
+    background:white;
+    padding:40px;
+    width:350px;
+    margin:100px auto;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    text-align:center;
+}
 
-    .container {
-        padding: 40px 20px;
+.auth-box h2{
+    margin-bottom:20px;
+}
+
+/* ===== INPUTS ===== */
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:8px;
+    border:1px solid #ddd;
+    outline:none;
+    transition:0.3s;
+}
+
+input:focus, textarea:focus{
+    border-color:#667eea;
+    box-shadow:0 0 5px rgba(102,126,234,0.5);
+}
+
+/* ===== BUTTON ===== */
+
+button{
+    padding:10px 20px;
+    background:#667eea;
+    border:none;
+    border-radius:8px;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#5563d1;
+    transform:translateY(-2px);
+}
+
+/* ===== CARD ===== */
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin:15px 0;
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* ===== PROFILE ===== */
+
+.profile-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.15);
+    text-align:center;
+}
+
+.profile-img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #667eea;
+    margin-bottom:15px;
+}
+
+/* ===== USER LIST CARD ===== */
+
+.card img{
+    border-radius:50%;
+    margin-bottom:10px;
+}
+
+/* ===== CHAT ===== */
+
+.chat-box{
+    background:white;
+    padding:15px;
+    height:350px;
+    overflow-y:auto;
+    border-radius:12px;
+    margin-bottom:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.chat-msg{
+    background:#f1f3ff;
+    padding:10px;
+    margin:8px 0;
+    border-radius:10px;
+    font-size:14px;
+}
+
+.chat-msg small{
+    color:#777;
+    font-size:11px;
+}
+
+/* ===== SEARCH BAR ===== */
+
+form input[type="text"]{
+    width:250px;
+}
+
+/* ===== LINKS ===== */
+
+a{
+    color:#667eea;
+    font-weight:500;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* ===== FOLLOW BUTTONS ===== */
+
+.card a{
+    margin-right:10px;
+}
+
+/* ===== RECEIVED ECHO STYLE ===== */
+
+.card p{
+    margin:5px 0;
+}
+
+/* ===== SCROLLBAR ===== */
+
+::-webkit-scrollbar{
+    width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#667eea;
+    border-radius:10px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+    .auth-box{
+        width:90%;
     }
 
-    .navbar a {
-        margin: 8px 0;
-    }
-
-    .hero-section h1 {
-        font-size: 32px;
+    .container{
+        width:95%;
     }
 }
