@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>Top Community Contributors</h2>
+
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Points</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
