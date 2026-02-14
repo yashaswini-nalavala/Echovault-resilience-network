@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit Profile</h2>
+
+<form method="POST" enctype="multipart/form-data">
+<textarea name="bio" placeholder="Update your bio">{{ user.bio }}</textarea><br>
+
+<input type="file" name="profile_pic"><br>
+
+<button type="submit">Save Changes</button>
+</form>
+
+{% endblock %}

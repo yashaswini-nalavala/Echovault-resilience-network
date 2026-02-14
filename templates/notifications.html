@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Follow Requests</h2>
+
+{% for req in requests %}
+<div class="card">
+<p>Follow request ID: {{ req.id }}</p>
+<a href="/accept/{{ req.id }}">Accept</a>
+</div>
+{% endfor %}
+
+{% if not requests %}
+<p>No new requests.</p>
+{% endif %}
+
+{% endblock %}
