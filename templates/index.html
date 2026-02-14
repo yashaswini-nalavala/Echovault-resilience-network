@@ -1,6 +1,22 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login - Echo App</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
 
-{% block content %}
+<div class="auth-box">
+<h2>Login</h2>
+<form method="POST" action="/login">
+<input type="text" name="username" placeholder="Username" required><br>
+<input type="password" name="password" placeholder="Password" required><br>
+<button type="submit">Login</button>
+</form>
+
+<p>New user? <a href="/register">Register here</a></p>
+</div>
+
 
 <div class="hero-section">
     <h1>Welcome to EchoVault</h1>
@@ -9,16 +25,6 @@
         kindness is rewarded, and meaningful connections are built.
     </p>
 
-    {% if not session.get('user_id') %}
-        <div class="hero-buttons">
-            <a href="/register" class="btn">Create Account</a>
-            <a href="/login" class="btn btn-outline">Login</a>
-        </div>
-    {% else %}
-        <div class="hero-buttons">
-            <a href="/dashboard" class="btn">Go to Dashboard</a>
-        </div>
-    {% endif %}
 </div>
 
 
@@ -46,6 +52,6 @@
 
 </div>
 
-{% endblock %}
-
+</body>
+</html>
 
