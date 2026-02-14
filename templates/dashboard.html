@@ -1,16 +1,28 @@
 {% extends "base.html" %}
-
 {% block content %}
-<div class="card">
-    <h2>Welcome, {{ user[0] }}</h2>
-    <p><strong>Points:</strong> {{ user[1] }}</p>
-    <p><strong>Your Referral Code:</strong> {{ user[2] }}</p>
-    <p><strong>Total Echoes Submitted:</strong> {{ total_echoes }}</p>
 
-    <div class="dashboard-actions">
-        <a href="/submit" class="btn">Submit Echo</a>
-        <a href="/receive" class="btn">Receive Echo</a>
-        <a href="/leaderboard" class="btn">View Leaderboard</a>
-    </div>
+<h2>Welcome {{ session['username'] }}</h2>
+
+<form method="GET">
+<input type="text" name="search" placeholder="Search users...">
+<button type="submit">Search</button>
+</form>
+
+<h3>All Users</h3>
+
+{% for user in users %}
+<div class="card">
+
+<img src="{{ url_for('static', filename='uploads/' + user.profile_pic) }}" width="60">
+
+<h4>{{ user.username }}</h4>
+
+<a href="/profile/{{ user.id }}">View Profile</a>
+<a href="/follow/{{ user.id }}">Follow</a>
+<a href="/chat/{{ user.id }}">Chat</a>
+<a href="/submit/{{ user.id }}">Send Echo</a>
+
 </div>
+{% endfor %}
+
 {% endblock %}
