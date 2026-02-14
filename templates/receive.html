@@ -1,28 +1,34 @@
 {% extends "base.html" %}
+
 {% block content %}
-
-<h1 class="dashboard-title">Receive an Echo</h1>
-
 <div class="card">
+    <h2>Receive an Echo</h2>
+
     <form method="POST">
         <select name="emotion" required>
             <option value="">Select Emotion</option>
-            <option>Anxiety</option>
-            <option>Failure</option>
-            <option>Loneliness</option>
-            <option>Burnout</option>
-            <option>Heartbreak</option>
+            <option value="Happy">Happy</option>
+            <option value="Sad">Sad</option>
+            <option value="Anxious">Anxious</option>
+            <option value="Hopeful">Hopeful</option>
+            <option value="Grateful">Grateful</option>
         </select>
 
-        <button type="submit" class="btn-primary">Reveal Echo</button>
+        <button type="submit" class="btn">Get Echo</button>
     </form>
-</div>
 
-{% if echo %}
-<div class="echo-display">
-    <h3>Someone once survived this...</h3>
-    <p>"{{ echo }}"</p>
-</div>
-{% endif %}
+    {% if echo %}
+        <div class="echo-box">
+            <h3>Message Received:</h3>
+            <p>{{ echo }}</p>
 
+            <a href="/profile/{{ echo_user_id }}" class="btn">View Profile</a>
+
+            <form method="POST" action="/message/{{ echo_user_id }}">
+                <input type="text" name="message" placeholder="Send a greeting..." required>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    {% endif %}
+</div>
 {% endblock %}
