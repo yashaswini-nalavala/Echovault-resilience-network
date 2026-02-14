@@ -1,20 +1,22 @@
 {% extends "base.html" %}
-
 {% block content %}
-<div class="card">
-    <h2>{{ user[0] }}'s Profile</h2>
-    <p><strong>Bio:</strong> {{ user[1] }}</p>
-    <p><strong>Points:</strong> {{ user[2] }}</p>
-    <p><strong>Followers:</strong> {{ followers }}</p>
-    <p><strong>Following:</strong> {{ following }}</p>
 
-    {% if session.get('user_id') and session.get('user_id') != profile_id %}
-        <a href="/follow/{{ profile_id }}" class="btn">Follow</a>
+<div class="profile-box">
 
-        <form method="POST" action="/message/{{ profile_id }}">
-            <input type="text" name="message" placeholder="Send a message..." required>
-            <button type="submit" class="btn">Message</button>
-        </form>
-    {% endif %}
+<img src="{{ url_for('static', filename='uploads/' + user.profile_pic) }}" width="120">
+
+<h2>{{ user.username }}</h2>
+
+<p><strong>Bio:</strong> {{ user.bio }}</p>
+<p><strong>Points:</strong> {{ user.points }}</p>
+<p><strong>Followers:</strong> {{ followers }}</p>
+<p><strong>Following:</strong> {{ following }}</p>
+
+{% if session['user_id'] == user.id %}
+<a href="/edit_profile">Edit Profile</a>
+{% endif %}
+
 </div>
+
 {% endblock %}
+
